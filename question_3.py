@@ -11,7 +11,11 @@ def calculate_total_score(emp_dict):
     points += emp_dict["calls"] * 10
     points += emp_dict["meetings"] * 30
     points += emp_dict["sales"] * 100
-    if ((emp_dict["calls"] > 150) or (emp_dict["meetings"] > 20) or (emp_dict["sales"] > 5)):
+    if emp_dict["calls"] > 150:
+        points += 100
+    if emp_dict["meetings"] > 20:
+        points += 100
+    if emp_dict["sales"] > 5:
         points += 100
     emp_dict["score"] = points
 
