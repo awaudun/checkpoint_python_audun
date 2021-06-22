@@ -14,11 +14,13 @@ def to_snake_case(camel_text):
     first_letter = True
     for char in camel_text:
         if first_letter:
-            snake.append(char.lower())
+            snake += char.lower()
+            first_letter = False
         elif char.isupper():
-            snake.append("_" + char.lower())
+            snake += "_"
+            snake += char.lower()
         else:
-            snake.append(char)
+            snake += char
     return snake
 
 print(to_snake_case("MyNameIsAudunYeah"))
